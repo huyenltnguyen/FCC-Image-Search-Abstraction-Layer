@@ -1,0 +1,29 @@
+{
+  "name": "fcc-image-search-abstraction-layer",
+  "version": "1.0.0",
+  "description": "FCC Image Search Abstraction Layer Microservice",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huyenltnguyen/FCC-Image-Search-Abstraction-Layer.git"
+  },
+  "author": "huyenltnguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huyenltnguyen/FCC-Image-Search-Abstraction-Layer/issues"
+  },
+  "homepage": "https://github.com/huyenltnguyen/FCC-Image-Search-Abstraction-Layer#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.8"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "nodemon": "^1.17.1"
+  }
+}
