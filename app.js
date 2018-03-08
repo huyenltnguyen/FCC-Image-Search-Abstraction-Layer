@@ -15,8 +15,9 @@ router.get('/', (req, res) => {
 
 router.get('/imagesearch/:keyword', (req, res) => {
   const keyword = req.params.keyword;
+  const offset = req.query.offset ? req.query.offset : 1;
 
-  axios(`https://www.googleapis.com/customsearch/v1?key=${GOOGLE_API_KEY}&cx=${SEARCH_ENGINE_KEY}&searchType=image&q=${keyword}`)
+  axios(`https://www.googleapis.com/customsearch/v1?key=${GOOGLE_API_KEY}&cx=${SEARCH_ENGINE_KEY}&searchType=image&q=${keyword}&start=${offset}`)
     .then((respond) => {
       const results = respond.data.items.map((item) => {
         const result = {
@@ -25,10 +26,8 @@ router.get('/imagesearch/:keyword', (req, res) => {
           thumbnail: item.image.thumbnailLink,
           contextLink: item.image.contextLink
         };
-
         return result;
       });
-
 
       res.send(results);
     })
