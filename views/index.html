@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link rel="stylesheet" href="/style.css">
+	<title>Image Search Abstraction Layer Microservice</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Image Search Abstraction Layer Microservice</h1>
+		<section>
+			<h2>User stories:</h2>
+			<ul>
+				<li>I can get the image URLs, alt text and page urls for a set of images relating to a given search string.</li>
+				<li>I can paginate through the responses by adding a ?offset=2 parameter to the URL.</li>
+				<li>I can get a list of the most recently submitted search strings.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Example usage for image search:</h2>
+      <a href="https://pale-canvas.glitch.me/api/imagesearch/dragon">https://pale-canvas.glitch.me/api/imagesearch/dragon</a>
+      <h2>Example usage for image search with pagination:</h2>
+			<a href="https://pale-canvas.glitch.me/api/imagesearch/dragon?offset=10">https://pale-canvas.glitch.me/api/imagesearch/dragon?offset=10</a>
+		</section>
+
+		<section>
+			<h2>Example output for image search (an array of 10 objects that are structured as below):</h2>
+			<code>{</code>
+				<div class="json-property">
+					<code>
+            "link": "https://orig00.deviantart.net/4008/f/2017/047/7/d/magma_dragon_by_tsaoshin-dazc6fq.png",
+					</code>
+				</div>
+				<div class="json-property">
+					<code>
+              "snippet": "Magma Dragon by TsaoShin on DeviantArt",
+					</code>
+        </div>
+        <div class="json-property">
+          <code>
+              "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjnBFOn0NcJ3A2ORHUkIZCv8fuMd3NdWy1DoQcyiNQT5iJ6iqumw1zw326",
+          </code>
+        </div>
+        <div class="json-property">
+          <code>
+              "contextLink": "https://tsaoshin.deviantart.com/art/Magma-Dragon-664016534"
+          </code>
+        </div>
+			<code>}</code>
+		</section>
+
+		<section>
+      <h2>Get latest search terms:</h2>
+      <a href="https://pale-canvas.glitch.me/api/latest/imagesearch">https://pale-canvas.glitch.me/api/latest/imagesearch</a>
+    </section>
+    <section>
+			<h2>Example output:</h2>
+			<code>{</code>
+				<div class="json-property">
+					<code>
+            "term": "dragon",
+					</code>
+				</div>
+        <div class="json-property">
+          <code>
+            "when": "Thu, 08 Mar 2018 21:28:23 GMT"
+          </code>
+        </div>
+			<code>}</code>
+		</section>
+	</div>
+</body>
+</html>
